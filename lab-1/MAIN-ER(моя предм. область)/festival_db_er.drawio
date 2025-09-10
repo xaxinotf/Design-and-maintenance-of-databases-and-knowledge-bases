@@ -1,0 +1,330 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" version="28.2.0" pages="2">
+  <diagram id="festival_er" name="festival_db ER">
+    <mxGraphModel dx="5151" dy="1624" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="1600" math="0" shadow="0">
+      <root>
+        <mxCell id="0" value="" />
+        <mxCell id="1" value="" parent="0" />
+        <mxCell id="3" value="artist (id PK, display_name, country, artist_type)" style="shape=rectangle;rounded=1;whiteSpace=wrap;glass=0;strokeColor=#1a1a1a;fillColor=#dae8fc;" parent="1" vertex="1">
+          <mxGeometry x="-150" y="90" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="solo_artist (artist_id PK/FK → artist.id, real_name, birth_date)" style="shape=rectangle;rounded=1;whiteSpace=wrap;glass=0;strokeColor=#1a1a1a;fillColor=#dae8fc;" parent="1" vertex="1">
+          <mxGeometry x="-380" y="280" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="band (artist_id PK/FK → artist.id, formed_year, genre)" style="shape=rectangle;rounded=1;whiteSpace=wrap;glass=0;strokeColor=#1a1a1a;fillColor=#dae8fc;" parent="1" vertex="1">
+          <mxGeometry x="290" y="350" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="venue (id PK, name, address, capacity, city)" style="shape=rectangle;rounded=1;whiteSpace=wrap;glass=0;strokeColor=#1a1a1a;fillColor=#dae8fc;" parent="1" vertex="1">
+          <mxGeometry x="380" y="90" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="stage (venue_id PK/FK, stage_name PK, capacity, stage_type)" style="shape=rectangle;rounded=1;whiteSpace=wrap;glass=0;strokeColor=#1a1a1a;fillColor=#fff2cc;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="340" y="230" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="event (id PK, festival_id FK, venue_id FK, stage_name FK, title, start_datetime, end_datetime, estimated_budget)" style="shape=rectangle;rounded=1;whiteSpace=wrap;glass=0;strokeColor=#1a1a1a;fillColor=#dae8fc;" parent="1" vertex="1">
+          <mxGeometry x="730" y="110" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="equipment_provider (id PK, company_name, contact_phone, contact_email, service_type)" style="shape=rectangle;rounded=1;whiteSpace=wrap;glass=0;strokeColor=#1a1a1a;fillColor=#dae8fc;" parent="1" vertex="1">
+          <mxGeometry x="1180" y="90" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="organizer (id PK, org_name, contact_email, contact_phone, address)" style="shape=rectangle;rounded=1;whiteSpace=wrap;glass=0;strokeColor=#1a1a1a;fillColor=#dae8fc;" parent="1" vertex="1">
+          <mxGeometry x="1490" y="440" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="contract (artist_id PK/FK, event_id PK/FK, organizer_id PK/FK, fee_amount, currency, signed_on, rider_required)" style="shape=rectangle;rounded=1;whiteSpace=wrap;glass=0;strokeColor=#1a1a1a;fillColor=#dae8fc;" parent="1" vertex="1">
+          <mxGeometry x="1540" y="130" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="performance (event_id PK/FK, artist_id PK/FK, billing_order, role, duration_minutes)" style="shape=rectangle;rounded=1;whiteSpace=wrap;glass=0;strokeColor=#1a1a1a;fillColor=#dae8fc;" parent="1" vertex="1">
+          <mxGeometry x="1010" y="440" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="event_provider (event_id PK/FK, provider_id PK/FK, service_description, fee_amount)" style="shape=rectangle;rounded=1;whiteSpace=wrap;glass=0;strokeColor=#1a1a1a;fillColor=#dae8fc;" parent="1" vertex="1">
+          <mxGeometry x="1180" y="310" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="festival (id PK, name UNIQUE, start_date, end_date, city, main_organizer_id FK)" style="shape=rectangle;rounded=1;whiteSpace=wrap;glass=0;strokeColor=#1a1a1a;fillColor=#dae8fc;" parent="1" vertex="1">
+          <mxGeometry x="1280" y="620" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="person (id PK, full_name, email, phone, role)" style="shape=rectangle;rounded=1;whiteSpace=wrap;glass=0;strokeColor=#1a1a1a;fillColor=#dae8fc;" parent="1" vertex="1">
+          <mxGeometry x="610" y="470" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="festival_director (festival_id PK/FK, person_id UNIQUE/FK)" style="shape=rectangle;rounded=1;whiteSpace=wrap;glass=0;strokeColor=#1a1a1a;fillColor=#dae8fc;" parent="1" vertex="1">
+          <mxGeometry x="1200" y="760" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="volunteer_team (festival_id PK/FK, team_name PK, coordinator_id FK)" style="shape=rectangle;rounded=1;whiteSpace=wrap;glass=0;strokeColor=#1a1a1a;fillColor=#fff2cc;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="810" y="720" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="volunteer_assignment (festival_id PK/FK, team_name PK/FK, person_id PK/FK, assigned_on)" style="shape=rectangle;rounded=1;whiteSpace=wrap;glass=0;strokeColor=#1a1a1a;fillColor=#dae8fc;" parent="1" vertex="1">
+          <mxGeometry x="450" y="730" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="artist_member (band_artist_id PK/FK, member_artist_id PK/FK, role_in_band, joined_on, left_on)" style="shape=rectangle;rounded=1;whiteSpace=wrap;glass=0;strokeColor=#1a1a1a;fillColor=#dae8fc;" parent="1" vertex="1">
+          <mxGeometry x="110" y="660" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="artist_mentorship (mentor_id PK/FK → artist.id, mentee_id PK/FK → artist.id, since_date, ended_on)" style="shape=rectangle;rounded=1;whiteSpace=wrap;glass=0;strokeColor=#1a1a1a;fillColor=#dae8fc;" parent="1" vertex="1">
+          <mxGeometry x="-160" y="530" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="ISA" style="shape=triangle;direction=north;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="180" y="230" width="40" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="проводиться" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;fillColor=#ffdede;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="730" y="320" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="виступає" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;fillColor=#ffdede;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="890" y="340" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="надає послуги" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;fillColor=#ffdede;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="1060" y="230" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="укладає контракт" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;fillColor=#ffdede;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="1570" y="290" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="менторство" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;fillColor=#ffdede;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="-40" y="350" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="директор" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;fillColor=#ffdede;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="920" y="530" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="призначення" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;fillColor=#ffdede;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="580" y="610" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="29" value="має склад" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;fillColor=#ffdede;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="190" y="470" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="3" target="21" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="21" target="4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="21" target="5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="33" value="M" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="8" target="22" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="34" value="1" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="22" target="7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="35" value="1" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="22" target="6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="36" value="1" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="8" target="23" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="37" value="M" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="23" target="3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="38" value="" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="23" target="12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="39" value="M" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="8" target="24" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="40" value="M" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="24" target="9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="41" value="" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="24" target="13" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="42" value="M" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="3" target="25" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="43" value="M" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="8" target="25" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="44" value="1" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="10" target="25" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="45" value="" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="25" target="11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="46" value="1" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="14" target="27" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="47" value="1" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="27" target="15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="48" value="" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="27" target="16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="49" value="1:M" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="14" target="17" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="50" value="" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="17" target="28" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="51" value="M" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="28" target="15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="52" value="" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="28" target="18" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="53" value="1" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="5" target="29" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="54" value="" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="29" target="19" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="55" value="M" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="29" target="3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="56" value="1" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="3" target="26" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="57" value="" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="26" target="20" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="58" value="M" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="26" target="3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="59" value="1:M (main_organizer_id)" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="10" target="14" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="60" value="1:M" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="14" target="8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="61" value="1:M" style="endArrow=none;startArrow=none;strokeColor=#666666;" parent="1" source="6" target="7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="62" value="ПРИМІТКА ДЛЯ ЧИТАННЯ ДІАГРАМИ - - - прямокутники — сутності; ромби — звʼязки; трикутник — ISA; потовщені/жовті — слабкі сутності (stage, volunteer_team). Підпис у ребрі: кратність" style="shape=note;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#999999;" parent="1" vertex="1">
+          <mxGeometry x="350" y="10" width="980" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="Y1_I8pDZqnMT322Xc2PK" name="МІЙ-варіант -2">
+    <mxGraphModel dx="2066" dy="1137" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-1" value="&lt;&lt;b&gt;organizer&lt;/b&gt;&gt;&lt;br/&gt;* id&lt;br/&gt;org_name (U)&lt;br/&gt;contact_email&lt;br/&gt;contact_phone&lt;br/&gt;address" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="1810" y="600" width="270" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-2" value="&lt;&lt;b&gt;person&lt;/b&gt;&gt;&lt;br/&gt;* id&lt;br/&gt;full_name&lt;br/&gt;email&lt;br/&gt;phone&lt;br/&gt;role (ENUM person_role)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="270" y="1350" width="270" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-3" value="&lt;&lt;b&gt;festival&lt;/b&gt;&gt;&lt;br/&gt;* id&lt;br/&gt;name (U)&lt;br/&gt;start_date&lt;br/&gt;end_date&lt;br/&gt;city&lt;br/&gt;main_organizer_id (FK→organizer.id)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="1260" y="930" width="270" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-4" value="&lt;&lt;b&gt;festival_director&lt;/b&gt;&gt;&lt;br/&gt;* festival_id (PK/FK→festival.id)&lt;br/&gt;person_id (U, FK→person.id)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="870" y="1510" width="270" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-5" value="&lt;&lt;b&gt;venue&lt;/b&gt;&gt;&lt;br/&gt;* id&lt;br/&gt;name&lt;br/&gt;address&lt;br/&gt;capacity&lt;br/&gt;city" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6a00ff;fontColor=#ffffff;strokeColor=#3700CC;" parent="1" vertex="1">
+          <mxGeometry x="1250" y="1210" width="270" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-6" value="&lt;&lt;b&gt;event&lt;/b&gt;&gt;&lt;br/&gt;* id&lt;br/&gt;festival_id (FK→festival.id)&lt;br/&gt;venue_id (FK→venue.id)&lt;br/&gt;stage_name (FK part→stage)&lt;br/&gt;title&lt;br/&gt;start_datetime&lt;br/&gt;end_datetime&lt;br/&gt;estimated_budget" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="1810" y="1120" width="270" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-7" value="&lt;&lt;b&gt;artist&lt;/b&gt;&gt;&lt;br/&gt;* id&lt;br/&gt;display_name&lt;br/&gt;country&lt;br/&gt;artist_type (ENUM artist_type)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="1960" y="1614" width="270" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-8" value="&lt;&lt;b&gt;solo_artist&lt;/b&gt;&gt;&lt;br/&gt;* artist_id (PK/FK→artist.id)&lt;br/&gt;real_name&lt;br/&gt;birth_date" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="2040" y="2100" width="270" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-9" value="&lt;&lt;b&gt;band&lt;/b&gt;&gt;&lt;br/&gt;* artist_id (PK/FK→artist.id)&lt;br/&gt;formed_year&lt;br/&gt;genre" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="2340" y="1950" width="270" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-10" value="&lt;&lt;b&gt;artist_member&lt;/b&gt;&gt;&lt;br/&gt;* (band_artist_id, member_artist_id)&lt;br/&gt;role_in_band (ENUM membership_role)&lt;br/&gt;joined_on&lt;br/&gt;left_on" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="1570" y="2110" width="270" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-11" value="&lt;&lt;b&gt;performance&lt;/b&gt;&gt;&lt;br/&gt;* (event_id, artist_id)&lt;br/&gt;billing_order&lt;br/&gt;role&lt;br/&gt;duration_minutes" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="1580" y="1780" width="270" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-12" value="&lt;&lt;b&gt;equipment_provider&lt;/b&gt;&gt;&lt;br/&gt;* id&lt;br/&gt;company_name&lt;br/&gt;contact_phone&lt;br/&gt;contact_email&lt;br/&gt;service_type" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="2490" y="1320" width="270" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-13" value="&lt;&lt;b&gt;event_provider&lt;/b&gt;&gt;&lt;br/&gt;* (event_id, provider_id)&lt;br/&gt;service_description&lt;br/&gt;fee_amount" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="2310" y="1570" width="270" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-14" value="&lt;&lt;b&gt;contract&lt;/b&gt;&gt;&lt;br/&gt;* (artist_id, event_id, organizer_id)&lt;br/&gt;fee_amount&lt;br/&gt;currency (ENUM payment_currency)&lt;br/&gt;signed_on&lt;br/&gt;rider_required" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="2450" y="1040" width="270" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-15" value="&lt;&lt;b&gt;volunteer_team&lt;/b&gt;&gt;&lt;br/&gt;* (festival_id, team_name)&lt;br/&gt;coordinator_id (FK→person.id)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="260" y="910" width="270" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-16" value="&lt;&lt;b&gt;volunteer_assignment&lt;/b&gt;&gt;&lt;br/&gt;* (festival_id, team_name, person_id)&lt;br/&gt;assigned_on" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="950" y="1810" width="270" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-17" value="&lt;&lt;b&gt;artist_mentorship&lt;/b&gt;&gt;&lt;br/&gt;* (mentor_id, mentee_id)&lt;br/&gt;since_date&lt;br/&gt;ended_on" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="2520" y="1760" width="270" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-18" value="FK: main_organizer_id → organizer.id" style="endArrow=block;html=1;rounded=0;fillColor=#6a00ff;strokeColor=#3700CC;" parent="1" source="G8_TUxfOAaP_bL-17mgX-3" target="G8_TUxfOAaP_bL-17mgX-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-19" value="PK/FK: festival_id → festival.id" style="endArrow=block;html=1;rounded=0;fillColor=#6a00ff;strokeColor=#3700CC;" parent="1" source="G8_TUxfOAaP_bL-17mgX-4" target="G8_TUxfOAaP_bL-17mgX-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-20" value="FK: person_id → person.id" style="endArrow=block;html=1;rounded=0;fillColor=#6a00ff;strokeColor=#3700CC;" parent="1" source="G8_TUxfOAaP_bL-17mgX-4" target="G8_TUxfOAaP_bL-17mgX-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-21" value="FK: venue_id → venue.id" style="endArrow=block;html=1;rounded=0;fillColor=#6a00ff;strokeColor=#3700CC;" parent="1" source="G8_TUxfOAaP_bL-17mgX-43" target="G8_TUxfOAaP_bL-17mgX-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-22" value="FK: festival_id → festival.id" style="endArrow=block;html=1;rounded=0;fillColor=#6a00ff;strokeColor=#3700CC;" parent="1" source="G8_TUxfOAaP_bL-17mgX-6" target="G8_TUxfOAaP_bL-17mgX-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-23" value="FK: venue_id → venue.id" style="endArrow=block;html=1;rounded=0;fillColor=#6a00ff;strokeColor=#3700CC;" parent="1" source="G8_TUxfOAaP_bL-17mgX-6" target="G8_TUxfOAaP_bL-17mgX-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-24" value="FK: (venue_id, stage_name) → stage" style="endArrow=block;html=1;rounded=0;fillColor=#6a00ff;strokeColor=#3700CC;" parent="1" source="G8_TUxfOAaP_bL-17mgX-6" target="G8_TUxfOAaP_bL-17mgX-43" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-25" value="PK/FK: artist_id → artist.id" style="endArrow=block;html=1;rounded=0;fillColor=#6a00ff;strokeColor=#3700CC;" parent="1" source="G8_TUxfOAaP_bL-17mgX-8" target="G8_TUxfOAaP_bL-17mgX-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-26" value="PK/FK: artist_id → artist.id" style="endArrow=block;html=1;rounded=0;fillColor=#6a00ff;strokeColor=#3700CC;" parent="1" source="G8_TUxfOAaP_bL-17mgX-9" target="G8_TUxfOAaP_bL-17mgX-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-27" value="FK: band_artist_id → artist.id" style="endArrow=block;html=1;rounded=0;fillColor=#6a00ff;strokeColor=#3700CC;" parent="1" source="G8_TUxfOAaP_bL-17mgX-10" target="G8_TUxfOAaP_bL-17mgX-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-28" value="FK: member_artist_id → artist.id" style="endArrow=block;html=1;rounded=0;dashed=1;fillColor=#6a00ff;strokeColor=#3700CC;" parent="1" source="G8_TUxfOAaP_bL-17mgX-10" target="G8_TUxfOAaP_bL-17mgX-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-29" value="FK: event_id → event.id" style="endArrow=block;html=1;rounded=0;fillColor=#6a00ff;strokeColor=#3700CC;" parent="1" source="G8_TUxfOAaP_bL-17mgX-11" target="G8_TUxfOAaP_bL-17mgX-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-30" value="FK: artist_id → artist.id" style="endArrow=block;html=1;rounded=0;fillColor=#6a00ff;strokeColor=#3700CC;" parent="1" source="G8_TUxfOAaP_bL-17mgX-11" target="G8_TUxfOAaP_bL-17mgX-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-31" value="FK: event_id → event.id" style="endArrow=block;html=1;rounded=0;fillColor=#6a00ff;strokeColor=#3700CC;" parent="1" source="G8_TUxfOAaP_bL-17mgX-13" target="G8_TUxfOAaP_bL-17mgX-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-32" value="FK: provider_id → equipment_provider.id" style="endArrow=block;html=1;rounded=0;fillColor=#6a00ff;strokeColor=#3700CC;" parent="1" source="G8_TUxfOAaP_bL-17mgX-13" target="G8_TUxfOAaP_bL-17mgX-12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-33" value="FK: artist_id → artist.id" style="endArrow=block;html=1;rounded=0;fillColor=#6a00ff;strokeColor=#3700CC;" parent="1" source="G8_TUxfOAaP_bL-17mgX-14" target="G8_TUxfOAaP_bL-17mgX-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-34" value="FK: event_id → event.id" style="endArrow=block;html=1;rounded=0;fillColor=#6a00ff;strokeColor=#3700CC;" parent="1" source="G8_TUxfOAaP_bL-17mgX-14" target="G8_TUxfOAaP_bL-17mgX-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-35" value="FK: organizer_id → organizer.id" style="endArrow=block;html=1;rounded=0;fillColor=#6a00ff;strokeColor=#3700CC;" parent="1" source="G8_TUxfOAaP_bL-17mgX-14" target="G8_TUxfOAaP_bL-17mgX-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-36" value="FK: festival_id → festival.id" style="endArrow=block;html=1;rounded=0;fillColor=#6a00ff;strokeColor=#3700CC;" parent="1" source="G8_TUxfOAaP_bL-17mgX-15" target="G8_TUxfOAaP_bL-17mgX-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-37" value="FK: coordinator_id → person.id" style="endArrow=block;html=1;rounded=0;fillColor=#6a00ff;strokeColor=#3700CC;" parent="1" source="G8_TUxfOAaP_bL-17mgX-15" target="G8_TUxfOAaP_bL-17mgX-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-38" value="FK: (festival_id, team_name) → volunteer_team" style="endArrow=block;html=1;rounded=0;fillColor=#6a00ff;strokeColor=#3700CC;" parent="1" source="G8_TUxfOAaP_bL-17mgX-43" target="G8_TUxfOAaP_bL-17mgX-15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-39" value="FK: person_id → person.id" style="endArrow=block;html=1;rounded=0;fillColor=#6a00ff;strokeColor=#3700CC;" parent="1" source="G8_TUxfOAaP_bL-17mgX-16" target="G8_TUxfOAaP_bL-17mgX-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-40" value="FK: mentor_id → artist.id" style="endArrow=block;html=1;rounded=0;fillColor=#6a00ff;strokeColor=#3700CC;" parent="1" source="G8_TUxfOAaP_bL-17mgX-17" target="G8_TUxfOAaP_bL-17mgX-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-41" value="FK: mentee_id → artist.id" style="endArrow=block;html=1;rounded=0;dashed=1;fillColor=#6a00ff;strokeColor=#3700CC;" parent="1" source="G8_TUxfOAaP_bL-17mgX-17" target="G8_TUxfOAaP_bL-17mgX-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-42" value="" style="endArrow=block;html=1;rounded=0;fillColor=#6a00ff;strokeColor=#3700CC;" parent="1" source="G8_TUxfOAaP_bL-17mgX-16" target="G8_TUxfOAaP_bL-17mgX-43" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1502" y="1910" as="sourcePoint" />
+            <mxPoint x="478" y="1050" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="G8_TUxfOAaP_bL-17mgX-43" value="&lt;&lt;b&gt;stage&lt;/b&gt;&gt;&lt;br/&gt;* (venue_id, stage_name)&lt;br/&gt;capacity&lt;br/&gt;stage_type" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="1270" y="1560" width="270" height="140" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
