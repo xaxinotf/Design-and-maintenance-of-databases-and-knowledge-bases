@@ -78,3 +78,12 @@ JOIN artist a ON a.id = p.artist_id
 LEFT JOIN contract c ON c.event_id = p.event_id AND c.artist_id = p.artist_id
 WHERE c.artist_id IS NULL;
 
+
+
+
+
+
+
+
+<img width="1535" height="1261" alt="image" src="https://github.com/user-attachments/assets/e787f7c0-c53e-4edb-b48e-9189e2928054" />
+
