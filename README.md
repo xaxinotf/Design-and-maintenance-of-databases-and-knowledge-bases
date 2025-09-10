@@ -1,5 +1,5 @@
-Lab-1-ER-- Я змоделював студії з назвою й адресою <iframe width="560" height="315" src='https://dbdiagram.io/e/67935a4e263d6cf9a0f1fe53/68bb03be61a46d388eaa5785'> </iframe>
-
+Lab-1-ER-- Я змоделював на сайті_1  https://dbdiagram.io/d/ER-diagram_lab-1-67935a4e263d6cf9a0f1fe53
+Lab-1-ER-- Я змоделював на сайті_2  https://drive.google.com/file/d/1Fe3X1EUtUlj_qMXFSzP8f7pjO0966Xdx/view?usp=sharing
 
 <img width="1046" height="579" alt="image" src="https://github.com/user-attachments/assets/98708a9b-7b0f-41db-af9c-85e0dea996df" />
 SELECT v.name AS venue, e.stage_name, e.title, e.start_datetime, e.end_datetime
