@@ -1,4 +1,6 @@
 Lab-1-ER-- Я змоделював на сайті_1  https://dbdiagram.io/d/ER-diagram_lab-1-67935a4e263d6cf9a0f1fe53
+
+
 Lab-1-ER-- Я змоделював на сайті_2  https://drive.google.com/file/d/1Fe3X1EUtUlj_qMXFSzP8f7pjO0966Xdx/view?usp=sharing
 
 <img width="1046" height="579" alt="image" src="https://github.com/user-attachments/assets/98708a9b-7b0f-41db-af9c-85e0dea996df" />
